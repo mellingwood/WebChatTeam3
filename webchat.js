@@ -59,12 +59,25 @@ function sendText() {
 }
 
 function processResults(data) {
+  /*
+  // add to the bottom of the chat box -- but only if it received a message
+  var actualMessage = data.substr(data.indexOf(":") + 1); //remove ID
+  actualMessage = actualMessage.substr(0, actualMessage.indexOf("<")); //remove </br> from end
+  console.log("actual message"+actualMessage);
+
+  console.log("got:"+data);
+
+  if(actualMessage.length>2) {
+    $('#chatBox').append(data);
+  }
+  */ //tried to fix the adding of new lines without messages but didn't work
+
   // add to the bottom of the chat box
   console.log("got:"+data);
   $('#chatBox').append(data);
 
   //make chat box check for new messages every five seconds
-  //not one second because that messed up the sending part 
+  //not one second because that messed up the sending part
   setTimeout(function(){sendText();}, 5000);
 
 }
