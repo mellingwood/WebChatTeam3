@@ -3,6 +3,7 @@ var id;
 $(document).ready(function () {
     $('#sendText').click(sendText);
     $('#checkText').click(sendText);
+    $('#enter').click(makeid);
 
     var input = document.getElementById("textinput");
     // Respond to enter key
@@ -17,19 +18,11 @@ $(document).ready(function () {
     });
 
 
-    id=makeid(10);
-    console.log("ID:",id);
-
 });
 
-function makeid(length) {
-   var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   var charactersLength = characters.length;
-   for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
+function makeid() {
+  id = document.getElementById("usernameinput").value;
+  console.log("ID:", id);
 }
 
 // Function to force scrollable window at bottom
