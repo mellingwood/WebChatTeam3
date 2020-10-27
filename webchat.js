@@ -70,6 +70,8 @@ function processResults(data) {
   console.log("got:"+data);
   $('#chatBox').append(data);
 
-  setTimeout(function(){sendText();}, 1000);
+  //make chat box check for new messages every five seconds
+  //not one second because that messed up the sending part 
+  setTimeout(function(){sendText();}, 5000);
 
 }
